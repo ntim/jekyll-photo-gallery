@@ -1,7 +1,7 @@
 Gem::Specification.new do |spec|
   spec.name        = "jekyll-photo-gallery"
   spec.summary     = "Yet another jekyll photo gallery generator with thumbnails."
-  spec.version     = "1.0.0"
+  spec.version     = "1.0.1"
   spec.authors     = ["Tim Niggemann"]
   spec.email       = "niggemann.tim@googlemail.com"
   spec.homepage    = "https://github.com/ntim/jekyll-photo-gallery"
