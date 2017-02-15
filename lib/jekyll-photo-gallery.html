@@ -1,0 +1,70 @@
+---
+layout: page
+---
+{% if page.title_deferred %}
+<h1 class="photo-gallery-title">{{ page.title_deferred }}</h1>
+{% endif %}
+{% if page.parent %}
+<div class="photo-gallery-parent">
+Back to <a href="{{ page.parent.url }}">
+{% if page.title_deferred %}
+{{ page.parent.title_deferred }}
+{% else %}
+{{ page.parent.title }}
+{% endif %}
+</a>
+</div>
+{% endif %}
+<div>
+{% if page.children != empty %}
+<ul class="photo-gallery-children">
+  {% for child in page.children %}
+  <li>
+    <a href="{{ child.url }}">{{ child.title_deferred }}
+      {% if child.photos != empty %}
+      <img src="{{child.url}}/{{ child.photos.first.thumbnail }}">
+      {% endif %}
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+</div>
+{% endif %}
+<div>
+{% for photo in page.photos %}
+    <div class="photo-gallery-photo">
+        <a href="{{ photo.name }}">
+            <img src="{{ photo.thumbnail }}" />
+        </a>
+        <div class="photo-gallery-photo-name">
+        {{ photo.name }}
+        {% if photo.date_time or photo.exif %}
+        <table class="photo-gallery-photo-info">
+          <tr>
+            <td>Date</td>
+            <td>{{ photo.date_time }}</td>
+          </tr>
+          {% if photo.exif %}
+          <tr>
+            <td>Camera model</td>
+            <td>{{ photo.exif.make }} {{ photo.exif.model }}</td>
+          </tr>
+          <tr>
+            <td>ISO</td>
+            <td>{{ photo.exif.iso_speed_ratings }}</td>
+          </tr>
+          <tr>
+            <td>F number</td>
+            <td>f/{{ photo.exif.aperture_value }}</td>
+          </tr>
+          <tr>
+            <td>Exposure time</td>
+            <td>{{ photo.exif.exposure_time }} s</td>
+          </tr>
+          {% endif %}
+        </table>
+        {% endif %}
+        </div>
+    </div>
+{% endfor %}
+</div>
