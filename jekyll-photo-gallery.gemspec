@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.files         = ["lib/jekyll-photo-gallery.rb", "lib/jekyll-photo-gallery.html", "Gemfile", "README.md", "LICENSE"]
   spec.require_paths = ["lib"]
 
-  spec.requirements << "imagemagick, >=v6.9 (needed by RMagick)"
+  spec.requirements << "imagemagic (needed by rmagick)"
 
   spec.add_runtime_dependency "exifr", "~> 1.2"
   spec.add_runtime_dependency "rmagick", "~> 2.16"
