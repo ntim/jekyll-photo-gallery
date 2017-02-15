@@ -1,4 +1,8 @@
 # jekyll-photo-gallery
+
+
+[![Gem Version](https://img.shields.io/gem/v/jekyll-photo-gallery.svg)](https://rubygems.org/gems/jekyll-photo-gallery)
+
 Yet another jekyll photo gallery.
 
 This [Jekyll plugin](http://jekyllrb.com/docs/plugins/) generates galleries from directories containing images recursively. Thumbnails are created using [rmagick](http://rmagick.rubyforge.org/).
