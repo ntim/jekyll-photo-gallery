@@ -131,8 +131,8 @@ module Jekyll
 
       self.process(@name)
       # Read template
-      gallery_page = File.join(File.dirname(__FILE__), "jekyll-photo-gallery.html")
-      self.read_yaml(File.dirname(gallery_page), File.basename(gallery_page))
+      @path = File.realpath(File.join(File.dirname(__FILE__), "jekyll-photo-gallery.html"))
+      self.read_yaml(File.dirname(@path), File.basename(@path))
 
       # Only display root page
       if parent.nil?
